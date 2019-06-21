@@ -11,4 +11,18 @@ assert.deepEqual(
     ' содержит хэштеги "web, pravo, javascript, script, programming"'
 );
 
+assert.deepEqual(
+    normalizeHashTags([]),
+    '',
+    'Список ""' +
+    ' содержит хэштеги ""'
+);
+
+assert.deepEqual(
+    normalizeHashTags(['web', 'pravo', 'JavaScript', 'Pravo', 'script', 'JavAScript', 'programming', 'JaVaScript']),
+    'web, pravo, javascript, script, programming',
+    'Список "web, pravo, JavaScript, Pravo, script, JavAScript programming, JaVaScript"' +
+    ' содержит хэштеги "web, pravo, javascript, script, programming"'
+);
+
 console.info('OK!');
